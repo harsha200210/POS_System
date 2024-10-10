@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Harsha Dilan">
+    <meta name="keyword" content="HTML, CSS, JavaScript">
+    <meta name="description" content="HTML, CSS, JavaScript">
+
     <title>POS System</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
@@ -10,44 +16,84 @@
             margin: 0;
             overflow: hidden;
         }
-        main{
+        section{
             width: 100vw;
             height: 100vh;
-            background-color: #D7F0FF;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .login-form{
-            background-color: #8ac7ee;
-            width: 40%;
-            height: 40%;
-            border-radius: 20px;
+
+        .education_card {
             position: relative;
-            box-shadow: 0px 0px 10px 10px #6c6ce3;
+            display: block;
+            width: 45%;
+            height: 40%;
+            margin: 80px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: all 0.4s;
+            box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+            box-sizing: border-box;
         }
-        .login-form>label{
+        .education_card:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s;
+        }
+        .education_card .info_section {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-blend-mode: multiply;
+            z-index: 2;
+            border-radius: 10px;
+            background: linear-gradient(to right, #fffdfd 50%, transparent 100%);
+        }
+        .education_card .blur_back {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            height: 100%;
+            right: 0;
+            background-size: cover;
+            border-radius: 11px;
+            width: 80%;
+            background-position: 70% 10% !important;
+        }
+
+        .background-ijse {
+            background: url("/asset/image/login-image.jpg");
+        }
+        .card_header{
+            position: relative;
+            left: 25%;
+        }
+        .card_header>label{
             font-size: 50px;
             font-weight: bold;
-            display: flex;
-            justify-content: center;
+        }
+        .card_content{
             position: relative;
-            top: 5%;
+            left: 7%;
+            top: 0;
+            width: 50%;
+            height: 70%;
         }
         .username{
-            width: 70%;
+            width: 100%;
             height: 13%;
             position: absolute;
-            top: 35%;
+            top: 15%;
             left: 0;
             right: 0;
             margin: auto;
         }
         .password{
-            width: 70%;
+            width: 100%;
             height: 13%;
             position: absolute;
-            top: 55%;
+            top: 45%;
             left: 0;
             right: 0;
             margin: auto;
@@ -61,7 +107,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            top: 80%;
+            top: 75%;
             margin: auto;
             font-size: 20px;
             font-weight: bold;
@@ -69,31 +115,39 @@
     </style>
 </head>
 <body>
-    <main>
-        <section class="login-form">
-            <label>Login</label>
-            <div class="input-group mb-3 username">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                </svg>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+<section>
+    <div class="education_card" >
+        <div class="info_section">
+            <div class="card_header">
+                <label>Login</label>
             </div>
-            <div class="input-group mb-3 password">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
-                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
-                </svg>
-                <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            <div class="card_content">
+                <div class="input-group mb-3 username">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                    </svg>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3 password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                    </svg>
+                    <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                </div>
+                <button type="button" class="btn btn-outline-primary btn-login">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                    Login</button>
             </div>
-            <button type="button" class="btn btn-outline-primary btn-login">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
-                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                </svg>
-                Login</button>
-        </section>
-    </main>
+        </div>
+        <div class="blur_back background-ijse"></div>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
