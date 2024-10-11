@@ -19,18 +19,11 @@
         section{
             width: 100vw;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .education_card {
-            position: relative;
-            display: block;
             width: 45%;
             height: 40%;
             margin: 80px auto;
-            overflow: hidden;
-            border-radius: 10px;
             transition: all 0.4s;
             box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
             box-sizing: border-box;
@@ -41,22 +34,16 @@
             transition: all 0.4s;
         }
         .education_card .info_section {
-            position: relative;
             width: 100%;
             height: 100%;
             background-blend-mode: multiply;
-            z-index: 2;
-            border-radius: 10px;
             background: linear-gradient(to right, #fffdfd 50%, transparent 100%);
         }
         .education_card .blur_back {
-            position: absolute;
             top: 0;
-            z-index: 1;
             height: 100%;
             right: 0;
             background-size: cover;
-            border-radius: 11px;
             width: 80%;
             background-position: 70% 10% !important;
         }
@@ -65,15 +52,12 @@
             background: url("/asset/image/login-image.jpg");
         }
         .card_header{
-            position: relative;
             left: 25%;
         }
         .card_header>label{
             font-size: 50px;
-            font-weight: bold;
         }
         .card_content{
-            position: relative;
             left: 7%;
             top: 0;
             width: 50%;
@@ -82,67 +66,59 @@
         .username{
             width: 100%;
             height: 13%;
-            position: absolute;
             top: 15%;
             left: 0;
             right: 0;
-            margin: auto;
         }
         .password{
             width: 100%;
             height: 13%;
-            position: absolute;
             top: 45%;
             left: 0;
             right: 0;
-            margin: auto;
         }
         .username>svg , .password>svg{
-            position: relative;
             left: -10px;
         }
         .btn-login{
             width: 200px;
-            position: absolute;
             left: 0;
             right: 0;
             top: 75%;
-            margin: auto;
             font-size: 20px;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
-<section>
-    <div class="education_card" >
-        <div class="info_section">
-            <div class="card_header">
-                <label>Login</label>
+<section class="d-flex align-items-center justify-content-center">
+    <div class="education_card position-relative d-block overflow-hidden rounded" >
+        <div class="info_section position-relative z-2 rounded">
+            <div class="card_header position-relative">
+                <label class="fw-bold">Login</label>
             </div>
-            <div class="card_content">
-                <div class="input-group mb-3 username">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <div class="card_content position-relative">
+                <div class="input-group mb-3 username position-absolute m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle position-relative" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                     </svg>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
-                <div class="input-group mb-3 password">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <div class="input-group mb-3 password position-absolute m-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-lock-fill position-relative" viewBox="0 0 16 16">
                         <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
                     </svg>
                     <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
                 </div>
-                <button type="button" class="btn btn-outline-primary btn-login">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                <button type="button" class="btn btn-outline-primary btn-login position-absolute m-auto fw-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-right position-relative" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
                         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
                     </svg>
                     Login</button>
             </div>
         </div>
-        <div class="blur_back background-ijse"></div>
+        <div class="blur_back background-ijse position-absolute z-1 rounded"></div>
     </div>
 </section>
 
