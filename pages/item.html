@@ -26,7 +26,6 @@
             top: 10%;
             left: 0;
             right: 0;
-            font-size: 50px;
             font-family: Serif,sans-serif;
         }
         .details{
@@ -43,7 +42,6 @@
             left: 0;
             right: 0;
             top: 45%;
-            font-size: 30px;
         }
         .btn-section{
             width: 13%;
@@ -52,9 +50,6 @@
             gap: 10px;
             top: 17%;
             right: 5%;
-        }
-        .btn-section>button{
-            font-size: 20px;
         }
         .search-section>input{
             width: 30%;
@@ -87,12 +82,13 @@
             left: 0;
             right: 0;
             top: 57%;
+            box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
         }
     </style>
 </head>
 <body>
 <main class="position-relative">
-    <section class="page-title position-absolute fw-bold m-auto">Inventory</section>
+    <section class="page-title position-absolute fw-bold m-auto fs-1">Inventory</section>
     <section class="details d-grid position-absolute">
         <div class="mb-3 row">
             <label for="inputId" class="col-sm-2 col-form-label">ID</label>
@@ -120,12 +116,12 @@
         </div>
     </section>
     <section class="btn-section position-absolute d-grid">
-        <button type="button" class="btn btn-outline-primary">Save</button>
-        <button type="button" class="btn btn-outline-primary">Delete</button>
-        <button type="button" class="btn btn-outline-primary">Update</button>
-        <button type="button" class="btn btn-outline-primary">Clear</button>
+        <button type="button" class="btn btn-outline-primary fs-4 fw-bold">Save</button>
+        <button type="button" class="btn btn-outline-primary fs-4 fw-bold">Delete</button>
+        <button type="button" class="btn btn-outline-primary fs-4 fw-bold">Update</button>
+        <button type="button" class="btn btn-outline-primary fs-4 fw-bold">Clear</button>
     </section>
-    <section class="search-section position-absolute fw-bold d-flex align-items-center m-auto">
+    <section class="search-section position-absolute fw-bold d-flex align-items-center m-auto fs-3">
         Inventory Table
         <input class="form-control position-absolute border border-black m-auto" list="datalistOptions" id="exampleDataList" placeholder="search to ID...">
         <datalist id="datalistOptions">
