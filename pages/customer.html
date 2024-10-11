@@ -1,23 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Harsha Dilan">
-        <meta name="keyword" content="HTML, CSS, JavaScript">
-        <meta name="description" content="HTML, CSS, JavaScript">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Harsha Dilan">
+    <meta name="keyword" content="HTML, CSS, JavaScript">
+    <meta name="description" content="HTML, CSS, JavaScript">
 
-        <title>POS System</title>
+    <title>POS System</title>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    </head>
-    <body>
-
-
-
-
-
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .page-title{
+            width: 90%;
+            height: 8vh;
+            position: absolute;
+            top: 10%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: Serif,sans-serif;
+        }
+        .details{
+            width: 70%;
+            height: 20%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5%;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+        }
+        .search-section{
+            width: 90%;
+            height: 10%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 45%;
+            margin: auto;
+            font-weight: bold;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+        }
+        .btn-section{
+            width: 13%;
+            height: 25%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            position: absolute;
+            top: 17%;
+            right: 5%;
+        }
+        .btn-section>button{
+            font-size: 20px;
+        }
+        .search-section>input{
+            width: 30%;
+            height: 60%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 30%;
+            margin: auto;
+            border: 1px solid black;
+        }
+        .search-section>button:nth-child(3){
+            width: 5%;
+            height: 60%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 24%;
+            margin: auto;
+        }
+        .search-section>button:nth-child(3)>svg{
+            width: 50%;
+            height: 80%;
+        }
+        .search-section>button:nth-child(4){
+            width: 10%;
+            height: 60%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 5%;
+            margin: auto;
+        }
+        .table-section{
+            width: 90%;
+            max-height: 38%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 57%;
+            margin: auto;
+            overflow-y: scroll;
+        }
+        .table-section>table>tbody>tr:hover{
+            background-color: #23bdb8;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="page-title">Customers</section>
+        <section class="details">
+            <div class="mb-3 row">
+                <label for="inputId" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control border border-black" id="inputId">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control border border-black" id="inputName">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control border border-black" id="inputAddress">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputNic" class="col-sm-2 col-form-label">NIC</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control border border-black" id="inputNic">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control border border-black" id="inputEmail">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputTel" class="col-sm-2 col-form-label">Tel</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control border border-black" id="inputTel">
+                </div>
+            </div>
+        </section>
+        <section class="btn-section">
+            <button type="button" class="btn btn-outline-primary">Save</button>
+            <button type="button" class="btn btn-outline-primary">Delete</button>
+            <button type="button" class="btn btn-outline-primary">Update</button>
+            <button type="button" class="btn btn-outline-primary">Clear</button>
+        </section>
+        <section class="search-section">
+            Customer Table
+            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="search to ID...">
+            <datalist id="datalistOptions">
+                <option value="San Francisco">
+                <option value="New York">
+                <option value="Seattle">
+                <option value="Los Angeles">
+                <option value="Chicago">
+            </datalist>
+            <button type="button" class="btn btn-outline-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </button>
+            <button class="btn btn-primary" type="button">View All Customers</button>
+        </section>
+        <section class="table-section">
+            <table class="table table-striped table-hover table-light table-columns">
+                <thead>
+                <tr>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">NIC</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tel</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+</body>
 </html>
