@@ -1,0 +1,284 @@
+@media (max-width: 1399.98px) {
+    #nav-bar>ul{
+        font-size: 22px;
+    }
+    #dashboard .count-section>div>img{
+        width: 100px;
+        height: 100px;
+    }
+    #customer .btn-section , #item .btn-section{
+        gap: 8px;
+    }
+    #customer .btn-section>button , #item .btn-section>button{
+        font-size: 18px;
+    }
+    #customer .search-section>button:nth-child(4) , #item .search-section>button:nth-child(4){
+        width: 17%;
+    }
+    #order .invoice-details>div{
+        margin: 0;
+    }
+    #order .btn-section{
+        width: 25%;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    #nav-bar>ul{
+        font-size: 20px;
+    }
+    #login .education_card {
+        width: 55%;
+    }
+    #dashboard .count-section>div>label {
+        font-size: 25px;
+    }
+    #dashboard .count-section>div>img{
+        width: 80px;
+        height: 80px;
+    }
+    #dashboard .search-section>button:nth-child(4){
+        width: 18%;
+        right: 0;
+    }
+    #customer .search-section>button:nth-child(4) , #item .search-section>button:nth-child(4){
+        width: 19%;
+    }
+    #order .invoice-details{
+        height: 12%;
+    }
+    #order .inventory-details{
+        top: 29%;
+    }
+    #order .btn-section{
+        width: 28%;
+    }
+    #order .btn-group>button{
+        font-size: 19px;
+    }
+    #order input {
+        height: 30%;
+    }
+}
+
+@media (max-width: 991.98px){
+    #login .education_card {
+        width: 65%;
+    }
+    #login .btn-login {
+        width: 150px;
+        font-size: 24px;
+    }
+    #dashboard .page-title , #customer .page-title , #item .page-title , #order .page-title{
+        font-size: 40px;
+    }
+    #dashboard .count-section>div>label {
+        font-size: 20px;
+    }
+    #dashboard .count-section>div>img{
+        width: 60px;
+        height: 60px;
+    }
+    #dashboard .count-section>div>div{
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+    #dashboard .search-section>input , #customer .search-section>input , #item .search-section>input {
+        width: 25%;
+        height: 50%;
+    }
+    #dashboard .search-section>button:nth-child(3) , #customer .search-section>button:nth-child(3) , #item .search-section>button:nth-child(3){
+        width: 7%;
+        height: 50%;
+        right: 22%;
+    }
+    #dashboard .search-section>button:nth-child(4) , #customer .search-section>button:nth-child(4) , #item .search-section>button:nth-child(4){
+        width: 18%;
+        height: 50%;
+        font-size: 13px;
+    }
+    #customer .search-section>button:nth-child(4) , #item .search-section>button:nth-child(4){
+        font-size: 11px;
+    }
+    #order .invoice-details{
+        height: 12%;
+    }
+    #order .inventory-details{
+        height: 20%;
+        top: 30%;
+    }
+    #order input {
+        height: 30%;
+    }
+    #order .total-section {
+        height: 33%;
+        top: 53%;
+        width: 27%;
+    }
+    #order .table-section{
+        top: 53%;
+    }
+    #order .btn-section{
+        width: 28%;
+        height: 5%;
+    }
+    #order .btn-group>button{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #login .education_card {
+        width: 75%;
+    }
+    #login .btn-login {
+        width: 120px;
+        font-size: 20px;
+    }
+    #login .username>svg , #login .password>svg{
+        width: 30px;
+        height: 30px;
+    }
+    #dashboard .count-section{
+        grid-template-columns: repeat(2 , 1fr);
+        height: 23%;
+        top: 15%;
+    }
+    #dashboard .count-section>div>label {
+        font-size: 18px;
+    }
+    #dashboard .count-section>div>div{
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    #dashboard .page-title , #customer .page-title , #item .page-title , #order .page-title{
+        font-size: 35px;
+    }
+    #dashboard .search-section , #customer .search-section , #item .search-section {
+        font-size: 25px;
+    }
+    #dashboard .search-section>input , #customer .search-section>input , #item .search-section>input {
+        width: 25%;
+        height: 40%;
+    }
+    #dashboard .search-section>button:nth-child(3) , #customer .search-section>button:nth-child(3) , #item .search-section>button:nth-child(3){
+        width: 8%;
+        height: 40%;
+        right: 21%;
+    }
+    #dashboard .search-section>button:nth-child(3)>svg , #customer .search-section>button:nth-child(3)>svg , #item .search-section>button:nth-child(3)>svg{
+        width: 90%;
+        height: 90%;
+    }
+    #dashboard .search-section>button:nth-child(4) , #customer .search-section>button:nth-child(4) , #item .search-section>button:nth-child(4){
+        width: 18%;
+        height: 60%;
+        font-size: 12px;
+    }
+    #customer .details{
+        gap: 3%;
+    }
+    #customer input{
+        height: 80%;
+    }
+    #item input{
+        height: 60%;
+    }
+    #order label{
+        font-size: 13px;
+    }
+    #order input {
+        height: 15%;
+    }
+    #order .inventory-details>div:nth-child(6)>button{
+        left: 70%;
+        width: 50%;
+    }
+    #order .total-section {
+        height: 31%;
+        width: 27%;
+    }
+    #order .btn-section{
+        height: 8%;
+        top: 85%;
+    }
+    #order .btn-group>button{
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+    #nav-bar>ul{
+        font-size: 18px;
+    }
+    #login .education_card {
+        width: 90%;
+    }
+    #login .btn-login {
+        width: 100px;
+        font-size: 17px;
+    }
+    #login .username>svg , #login .password>svg{
+        width: 25px;
+        height: 25px;
+    }
+    #dashboard .page-title , #customer .page-title , #item .page-title , #order .page-title{
+        font-size: 30px;
+    }
+    #dashboard .search-section , #customer .search-section , #item .search-section {
+        font-size: 20px;
+    }
+    #dashboard .search-section>button:nth-child(4) , #customer .search-section>button:nth-child(4) , #item .search-section>button:nth-child(4){
+        font-size: 11px;
+    }
+    #dashboard .search-section>button:nth-child(3) , #customer .search-section>button:nth-child(3) , #item .search-section>button:nth-child(3){
+        padding: 0;
+    }
+    #dashboard .search-section>button:nth-child(3)>svg , #customer .search-section>button:nth-child(3)>svg , #item .search-section>button:nth-child(3)>svg{
+        width: 50%;
+        height: 50%;
+    }
+    #customer .details , #item .details{
+        gap: 5px;
+        grid-template-columns: 1fr;
+        width: 60%;
+        height: 30%;
+        padding-left: 15px;
+    }
+    #customer .details>div>label , #item .details>div>label{
+        width: 22%;
+        padding: 0;
+        margin: 0;
+    }
+    #customer .details>div>div , #item .details>div>div{
+        width: 65%;
+        height: 80%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+    }
+    #item .details>div>div{
+        width: 70%;
+        height: 55%;
+    }
+    #customer .details>div>div>input , #item .details>div>div>input{
+        height: 100%;
+        position: absolute;
+        right: 0;
+    }
+    #customer .search-section , #item .search-section{
+        top: 46%;
+    }
+    #customer .btn-section , #item .btn-section{
+        right: 15%;
+        top: 15%;
+    }
+    #customer .table-section , #item .table-section{
+        top: 58%;
+    }
+}

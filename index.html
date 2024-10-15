@@ -11,84 +11,33 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaQuery.css">
     <style>
-        body{
-            margin: 0;
-            overflow: hidden;
-        }
-        section{
-            width: 100vw;
-            height: 100vh;
-        }
-        .education_card {
-            width: 45%;
-            height: 40%;
-            margin: 80px auto;
-            transition: all 0.4s;
-            box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
-            box-sizing: border-box;
-        }
-        .education_card:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s;
-        }
-        .education_card .info_section {
-            width: 100%;
-            height: 100%;
-            background-blend-mode: multiply;
-            background: linear-gradient(to right, #fffdfd 50%, transparent 100%);
-        }
-        .education_card .blur_back {
-            top: 0;
-            height: 100%;
-            right: 0;
-            background-size: cover;
-            width: 80%;
-            background-position: 70% 10% !important;
-        }
 
-        .background-ijse {
-            background: url("/asset/image/login-image.jpg");
-        }
-        .card_header{
-            top: 5%;
-            left: 25%;
-        }
-        .card_content{
-            left: 7%;
-            top: 0;
-            width: 50%;
-            height: 70%;
-        }
-        .username{
-            width: 100%;
-            height: 13%;
-            top: 15%;
-            left: 0;
-            right: 0;
-        }
-        .password{
-            width: 100%;
-            height: 13%;
-            top: 45%;
-            left: 0;
-            right: 0;
-        }
-        .username>svg , .password>svg{
-            left: -10px;
-        }
-        .btn-login{
-            width: 200px;
-            left: 0;
-            right: 0;
-            top: 75%;
-        }
     </style>
 </head>
 <body>
-<section class="d-flex align-items-center justify-content-center">
-    <div class="education_card position-relative d-block overflow-hidden rounded" >
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav-bar">
+    <ul class="nav d-flex justify-content-center align-items-center">
+        <li class="nav-item">
+            <span class="nav-link active" aria-current="page" id="nav-dashboard">Dashboard</span>
+        </li>
+        <li class="nav-item">
+            <span class="nav-link" id="nav-customer">Customer</span>
+        </li>
+        <li class="nav-item">
+            <span class="nav-link" id="nav-item">Item</span>
+        </li>
+        <li class="nav-item">
+            <span class="nav-link" id="nav-order">Order</span>
+        </li>
+    </ul>
+</nav>
+
+    <section id="login" class="d-flex align-items-center justify-content-center">
+    <div class="container education_card position-relative d-block overflow-hidden rounded" >
         <div class="info_section position-relative z-2 rounded">
             <div class="card_header position-relative">
                 <label class="fw-bold fs-1">Login</label>
@@ -107,7 +56,7 @@
                     </svg>
                     <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
                 </div>
-                <button type="button" class="btn btn-outline-primary btn-login position-absolute m-auto fw-bold fs-4">
+                <button type="button" class="btn btn-outline-primary btn-login position-absolute m-auto fw-bold" id="btnLogin">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-right position-relative" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
                         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
@@ -119,7 +68,575 @@
     </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <main id="dashboard" class="position-relative">
+    <section class="page-title position-absolute fw-bold m-auto">Dashboard</section>
+    <section class="count-section position-absolute m-auto d-grid">
+        <div class="count-t-orders rounded position-relative">
+            <label class="position-absolute fw-bold">Today Order</label><br>
+            <div class="d-flex align-items-center justify-content-center position-absolute fw-bold border border-white rounded-circle">10</div>
+            <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/shopping-cart.png" alt="shopping-cart" class="position-absolute m-auto"/>
+        </div>
+        <div class="count-m-orders rounded position-relative">
+            <label class="position-absolute fw-bold">Today Order</label><br>
+            <div class="d-flex align-items-center justify-content-center position-absolute fw-bold border border-white rounded-circle">10</div>
+            <img width="64" height="64" src="https://img.icons8.com/sf-black-filled/64/purchase-order.png" alt="purchase-order" class="position-absolute m-auto"/>
+        </div>
+        <div class="count-customer rounded position-relative">
+            <label class="position-absolute fw-bold">Today Order</label><br>
+            <div class="d-flex align-items-center justify-content-center position-absolute fw-bold border border-white rounded-circle">10</div>
+            <img width="48" height="48" src="https://img.icons8.com/sf-black-filled/64/crowd.png" alt="crowd" class="position-absolute m-auto"/>
+        </div>
+        <div class="count-item rounded position-relative">
+            <label class="position-absolute fw-bold">Today Order</label><br>
+            <div class="d-flex align-items-center justify-content-center position-absolute fw-bold border border-white rounded-circle">10</div>
+            <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/new-product.png" alt="new-product" class="position-absolute m-auto"/>
+        </div>
+    </section>
+    <section class="search-section position-absolute fw-bold d-flex align-items-center m-auto">
+        Orders Table
+        <input class="form-control position-absolute border border-black m-auto" list="datalistOptions" id="exampleDataListD" placeholder="Type to search...">
+        <datalist id="datalistOptionsD">
+            <option value="San Francisco">
+            <option value="New York">
+            <option value="Seattle">
+            <option value="Los Angeles">
+            <option value="Chicago">
+        </datalist>
+        <button type="button" class="btn btn-outline-primary position-absolute m-auto d-flex align-items-center justify-content-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+        </button>
+        <button class="btn btn-primary position-absolute m-auto" type="button">View All Orders</button>
+    </section>
+    <section class="table-section position-absolute overflow-y-scroll m-auto">
+        <table class="table table-striped table-hover table-light table-columns">
+            <thead>
+            <tr>
+                <th scope="col">Order ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Total (LKR)</th>
+                <th scope="col">Customer ID</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            <tr>
+                <th scope="row">1</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>2024/10/10</td>
+                <td>2500</td>
+                <td>1</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
 
+    <main id="customer" class="position-relative">
+        <section class="page-title position-absolute fw-bold m-auto fs-1">Customers</section>
+        <section class="details d-grid position-absolute">
+            <div class="row position-relative">
+                <label for="inputId" class="col-xs-3 col-sm-4 col-md-3 col-form-label">ID</label>
+                <div class="col-xs-7 col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputId">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputName" class="col-xs-3 col-sm-4 col-md-3 col-form-label">Name</label>
+                <div class="col-xs-7 col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputName">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputAddress" class="col-xs-3 col-sm-4 col-md-3 col-form-label">Address</label>
+                <div class="col-xs-7 col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputAddress">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputNic" class="col-xs-3 col-sm-4 col-md-3 col-form-label">NIC</label>
+                <div class="col-xs-7 col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputNic">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputEmail" class="col-xs-3 col-sm-4 col-md-3 col-form-label">Email</label>
+                <div class="col-xs-7 col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputEmail">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputTel" class="col-xs-3 col-sm-4 col-md-3 col-form-label">Tel</label>
+                <div class="col-xs-7 col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputTel">
+                </div>
+            </div>
+        </section>
+        <section class="btn-section position-absolute d-grid">
+            <button type="button" class="btn btn-outline-primary fw-bold">Save</button>
+            <button type="button" class="btn btn-outline-primary fw-bold">Delete</button>
+            <button type="button" class="btn btn-outline-primary fw-bold">Update</button>
+            <button type="button" class="btn btn-outline-primary fw-bold">Clear</button>
+        </section>
+        <section class="search-section position-absolute fw-bold d-flex align-items-center m-auto">
+            Customer Table
+            <input class="form-control position-absolute border border-black m-auto" list="datalistOptions" id="exampleDataListC" placeholder="search to ID...">
+            <datalist id="datalistOptionsC">
+                <option value="San Francisco">
+                <option value="New York">
+                <option value="Seattle">
+                <option value="Los Angeles">
+                <option value="Chicago">
+            </datalist>
+            <button type="button" class="btn btn-outline-primary position-absolute m-auto d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </button>
+            <button class="btn btn-primary position-absolute m-auto" type="button">View All Customers</button>
+        </section>
+        <section class="table-section position-absolute overflow-y-scroll m-auto">
+            <table class="table table-striped table-hover table-light table-columns">
+                <thead>
+                <tr>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">NIC</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tel</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                    <td>0771234567</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <main id="item" class="position-relative">
+        <section class="page-title position-absolute fw-bold m-auto fs-1">Inventory</section>
+        <section class="details d-grid position-absolute">
+            <div class="row position-relative">
+                <label for="inputItemId" class="col-sm-4 col-md-3 col-form-label">ID</label>
+                <div class="col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputItemId">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputModel" class="col-sm-4 col-md-3 col-form-label">Model</label>
+                <div class="col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputModel">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputPrice" class="col-sm-4 col-md-3 col-form-label">Price</label>
+                <div class="col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputPrice">
+                </div>
+            </div>
+            <div class="row position-relative">
+                <label for="inputQuantity" class="col-sm-4 col-md-3 col-form-label">Quantity</label>
+                <div class="col-sm-8 col-md-9 position-absolute">
+                    <input type="text" class="form-control border border-black" id="inputQuantity">
+                </div>
+            </div>
+        </section>
+        <section class="btn-section position-absolute d-grid">
+            <button type="button" class="btn btn-outline-primary fw-bold">Save</button>
+            <button type="button" class="btn btn-outline-primary fw-bold">Delete</button>
+            <button type="button" class="btn btn-outline-primary fw-bold">Update</button>
+            <button type="button" class="btn btn-outline-primary fw-bold">Clear</button>
+        </section>
+        <section class="search-section position-absolute fw-bold d-flex align-items-center m-auto">
+            Inventory Table
+            <input class="form-control position-absolute border border-black m-auto" list="datalistOptions" id="exampleDataList" placeholder="search to ID...">
+            <datalist id="datalistOptions">
+                <option value="San Francisco">
+                <option value="New York">
+                <option value="Seattle">
+                <option value="Los Angeles">
+                <option value="Chicago">
+            </datalist>
+            <button type="button" class="btn btn-outline-primary position-absolute m-auto d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </button>
+            <button class="btn btn-primary position-absolute m-auto" type="button">View All Inventory</button>
+        </section>
+        <section class="table-section position-absolute overflow-y-scroll m-auto">
+            <table class="table table-striped table-hover table-light table-columns">
+                <thead>
+                <tr>
+                    <th scope="col">Inventory ID</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Book</td>
+                    <td>200.0</td>
+                    <td>20</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <main id="order" class="position-relative">
+        <section class="page-title position-absolute fw-bold m-auto fs-1">Orders</section>
+        <section class="invoice-details position-absolute d-grid align-items-center rounded m-auto">
+            <div class="row d-flex align-items-center justify-content-center" >
+                <label for="inputOrderId" class="col-sm-10 col-md-7 col-lg-5 col-xl-3 col-xxl-4 col-form-label">Order ID</label>
+                <div class="col-sm-10 col-lg-10 col-xl-8 col-md-10 col-xxl-7">
+                    <input type="text" class="form-control border border-black" id="inputOrderId">
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputCustomerId" class="col-sm-12 col-md-10 col-lg-7 col-xl-4 col-xxl-5 col-form-label">Customer ID</label>
+                <div class="col-sm-12 col-lg-10 col-xl-8 col-md-10 col-xxl-7">
+                    <input type="text" class="form-control border border-black" id="inputCustomerId">
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputCustomerName" class="col-sm-12 col-md-11 col-lg-9 col-xl-4 col-xxl-6 col-form-label">Customer Name</label>
+                <div class="col-sm-12 col-lg-10 col-xl-8 col-md-10 col-xxl-6">
+                    <input class="form-control border border-black" type="text" id="inputCustomerName" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputDate" class="col-sm-7 col-md-7 col-lg-3 col-xl-3 col-xxl-3 col-form-label">Date</label>
+                <div class="col-sm-12 col-xl-8 col-lg-10 col-md-10 col-xxl-8">
+                    <input class="form-control border border-black" type="text" id="inputDate" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+        </section>
+        <section class="inventory-details position-absolute d-grid align-items-center rounded m-auto">
+            <div class="row d-flex align-items-center justify-content-center" >
+                <label for="inputInventoryId" class="col-sm-8 col-md-7 col-lg-10 col-xl-4 col-xxl-4 col-form-label">Inventory ID</label>
+                <div class="col-sm-8 col-md-8 col-lg-10 col-xl-7 col-xxl-7">
+                    <input type="text" class="form-control border border-black" id="inputInventoryId">
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputOrderModel" class="col-sm-7 col-md-7 col-lg-10 col-xl-3 col-xxl-3 col-form-label">Model</label>
+                <div class="col-sm-12 col-md-8 col-lg-10 col-xl-8 col-xxl-9">
+                    <input class="form-control border border-black" type="text" id="inputOrderModel" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputOrderPrice" class="col-sm-7 col-md-7 col-lg-10 col-xl-3 col-xxl-3 col-form-label">Price</label>
+                <div class="col-sm-9 col-md-8 col-lg-10 col-xl-8 col-xxl-8">
+                    <input class="form-control border border-black" type="text" id="inputOrderPrice" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputOnHandQty" class="col-sm-12 col-md-10 col-lg-10 col-lg-8 col-xl-5 col-xxl-6 col-form-label">On Hand Quantity</label>
+                <div class="col-sm-8 col-md-8 col-lg-10 col-xl-6 col-xxl-5">
+                    <input class="form-control border border-black" type="text" id="inputOnHandQty" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-end" >
+                <label for="inputOrderQty" class="col-sm-5 col-lg-4 col-md-5 col-xl-4 col-xxl-4 col-form-label">Order Quantity</label>
+                <div class="col-sm-6 col-md-4 col-lg-6 col-xl-6 col-xxl-7">
+                    <input type="text" class="form-control border border-black" id="inputOrderQty">
+                </div>
+            </div>
+            <div class="row position-relative d-flex align-items-center justify-content-center col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-3" >
+                <button class="btn btn-primary position-absolute" type="button">Add</button>
+            </div>
+
+        </section>
+        <section class="table-section position-absolute overflow-y-scroll">
+            <table class="table table-striped table-hover table-light table-columns">
+                <thead>
+                <tr>
+                    <th scope="col">Inventory ID</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>Pasindu</td>
+                    <td>Panadura</td>
+                    <td>20012027356</td>
+                    <td>pasindu@gamil.com</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="total-section position-absolute d-grid align-items-center rounded">
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputTotal" class="col-sm-4 col-xl-4 col-lg-4 col-md-5 col-xl-3 col-xxl-3 col-form-label">Total</label>
+                <div class="col-sm-7 col-xl-7 col-lg-7 col-md-6 col-xxl-6">
+                    <input class="form-control border border-black" type="text" id="inputTotal" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center" >
+                <label for="inputDiscount" class="col-sm-4 col-xl-4 col-lg-4 col-md-5 col-xl-3 col-xxl-3 col-form-label">Discount</label>
+                <div class="col-sm-7 col-xl-7 col-lg-7 col-md-6 col-xxl-6">
+                    <input type="text" class="form-control border border-black" id="inputDiscount">
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputSubTotal" class="col-sm-4 col-xl-4 col-lg-4 col-md-5 col-xl-4 col-xxl-3 col-form-label">Sub Total</label>
+                <div class="col-sm-7 col-xl-7 col-lg-7 col-md-6 col-xxl-6">
+                    <input class="form-control border border-black" type="text" id="inputSubTotal" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center" >
+                <label for="inputCash" class="col-sm-4 col-xl-4 col-lg-4 col-md-5 col-xl-3 col-xxl-3 col-form-label">Cash</label>
+                <div class="col-sm-7 col-xl-7 col-lg-7 col-md-6 col-xxl-6">
+                    <input type="text" class="form-control border border-black" id="inputCash">
+                </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <label for="inputBalance" class="col-sm-4 col-xl-4 col-lg-4 col-md-5 col-xl-3 col-xxl-3 col-form-label">Balance</label>
+                <div class="col-sm-7 col-xl-7 col-lg-7 col-md-6 col-xxl-6">
+                    <input class="form-control border border-black" type="text" id="inputBalance" value="Readonly input here..." aria-label="readonly input example" readonly>
+                </div>
+            </div>
+        </section>
+        <section class="btn-section position-absolute">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary fw-bold">Place Order</button>
+                <button type="button" class="btn btn-outline-primary fw-bold">New</button>
+                <button type="button" class="btn btn-outline-primary fw-bold">Clear</button>
+            </div>
+        </section>
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </body>
 </html>

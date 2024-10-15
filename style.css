@@ -1,0 +1,418 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#nav-bar{
+    width: 100vw;
+    height: 8vh;
+    background-color: white !important;
+    box-shadow: 0 0 20px 0 black;
+}
+#nav-bar>ul{
+    font-size: 25px;
+}
+/*---------------------login section -------------------*/
+#login{
+    width: 100vw;
+    height: 100vh;
+}
+#login .education_card {
+    width: 45%;
+    height: 40%;
+    margin: 80px auto;
+    transition: all 0.4s;
+    box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+    box-sizing: border-box;
+}
+#login .education_card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s;
+}
+#login .education_card .info_section {
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    background: linear-gradient(to right, #fffdfd 50%, transparent 100%);
+}
+#login .education_card .blur_back {
+    top: 0;
+    height: 100%;
+    right: 0;
+    background-size: cover;
+    width: 80%;
+    background-position: 70% 10%;
+}
+
+#login .background-ijse {
+    background: url("/asset/image/login-image.jpg");
+}
+#login .card_header{
+    top: 5%;
+    left: 25%;
+}
+#login .card_content{
+    left: 7%;
+    top: 0;
+    width: 50%;
+    height: 70%;
+}
+#login .username{
+    width: 100%;
+    height: 13%;
+    top: 15%;
+    left: 0;
+    right: 0;
+}
+#login .password{
+    width: 100%;
+    height: 13%;
+    top: 45%;
+    left: 0;
+    right: 0;
+}
+#login .username>svg , #login .password>svg{
+    left: -10px;
+}
+#login .btn-login{
+    width: 200px;
+    left: 0;
+    right: 0;
+    top: 75%;
+}
+
+/*---------------------dashboard section -------------------*/
+
+#dashboard{
+    width: 100vw;
+    height: 92vh;
+}
+#dashboard .page-title{
+    width: 90%;
+    height: 8vh;
+    top: 5%;
+    left: 0;
+    right: 0;
+    font-size: 50px;
+    font-family: Serif,sans-serif;
+}
+#dashboard .count-section{
+    width: 90%;
+    height: 17%;
+    left: 0;
+    right: 0;
+    top: 18%;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 3%;
+}
+#dashboard .count-section>div{
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+}
+#dashboard .count-t-orders {
+    background: linear-gradient(to right, #493240, #f09) !important;
+    color: #fff;
+}
+
+#dashboard .count-m-orders {
+    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    color: #fff;
+}
+
+#dashboard .count-customer {
+    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+    color: #fff;
+}
+
+#dashboard .count-item {
+    background: linear-gradient(to right, #a86008, #ffba56) !important;
+    color: #fff;
+}
+#dashboard .count-section>div>img{
+    opacity: 0.2;
+    width: 30%;
+    height: 80%;
+    top: 0;
+    bottom: 0;
+    right: 5%;
+}
+#dashboard .count-section>div>label{
+    font-size: 30px;
+    top: 7%;
+    left: 5%;
+}
+#dashboard .count-section>div>div{
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    top: 43%;
+    left: 15%;
+}
+#dashboard .search-section{
+    width: 90%;
+    height: 10%;
+    left: 0;
+    right: 0;
+    top: 40%;
+    font-size: 30px;
+}
+#dashboard .search-section>input{
+    width: 30%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 30%;
+}
+#dashboard .search-section>button:nth-child(3){
+    width: 5%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 24%;
+}
+#dashboard .search-section>button:nth-child(3)>svg{
+    width: 80%;
+    height: 80%;
+}
+#dashboard .search-section>button:nth-child(4){
+    width: 15%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+#dashboard .table-section{
+    width: 90%;
+    max-height: 40%;
+    left: 0;
+    right: 0;
+    top: 54%;
+}
+
+/*---------------------customer section -------------------*/
+
+#customer {
+    width: 100vw;
+    height: 92vh;
+}
+#customer .page-title{
+    width: 90%;
+    height: 8vh;
+    top: 5%;
+    left: 0;
+    right: 0;
+    font-family: Serif,sans-serif;
+}
+#customer .details{
+    width: 70%;
+    height: 20%;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+    top: 15%;
+    left: 5%;
+}
+#customer .search-section{
+    width: 90%;
+    height: 10%;
+    left: 0;
+    right: 0;
+    top: 40%;
+}
+#customer .btn-section>button{
+    font-size: 20px;
+}
+#customer .btn-section{
+    width: 13%;
+    height: 25%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    top: 10%;
+    right: 5%;
+}
+#customer .search-section>input{
+    width: 30%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 30%;
+}
+#customer .search-section>button:nth-child(3){
+    width: 5%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 24%;
+}
+#customer .search-section>button:nth-child(3)>svg{
+    width: 80%;
+    height: 80%;
+}
+#customer .search-section>button:nth-child(4){
+    width: 15%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+#customer .table-section{
+    width: 90%;
+    max-height: 40%;
+    left: 0;
+    right: 0;
+    top: 54%;
+    box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+}
+
+
+/*---------------------item section -------------------*/
+
+#item {
+    width: 100vw;
+    height: 92vh;
+}
+#item .page-title{
+    width: 90%;
+    height: 8vh;
+    top: 5%;
+    left: 0;
+    right: 0;
+    font-family: Serif,sans-serif;
+}
+#item .details{
+    width: 70%;
+    height: 20%;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+    top: 17%;
+    left: 5%;
+}
+#item .search-section{
+    width: 90%;
+    height: 10%;
+    left: 0;
+    right: 0;
+    top: 40%;
+}
+#item .btn-section>button{
+    font-size: 20px;
+}
+#item .btn-section{
+    width: 13%;
+    height: 25%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    top: 10%;
+    right: 5%;
+}
+#item .search-section>input{
+    width: 30%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 30%;
+}
+#item .search-section>button:nth-child(3){
+    width: 5%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 24%;
+}
+#item .search-section>button:nth-child(3)>svg{
+    width: 80%;
+    height: 80%;
+}
+#item .search-section>button:nth-child(4){
+    width: 10%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+#item .table-section{
+    width: 90%;
+    max-height: 38%;
+    left: 0;
+    right: 0;
+    top: 54%;
+    box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+}
+
+
+/*---------------------Order section -------------------*/
+
+#order{
+    width: 100vw;
+    height: 92vh;
+}
+#order .page-title{
+    width: 90%;
+    height: 8vh;
+    top: 5%;
+    left: 0;
+    right: 0;
+    font-family: Serif,sans-serif;
+}
+#order .invoice-details{
+    width: 90%;
+    height: 10%;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 2%;
+    background-color: #B3E2FC;
+    top: 15%;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+}
+#order .inventory-details{
+    width: 90%;
+    height: 18%;
+    background-color: #B3E2FC;
+    grid-template-columns: repeat(4 , 1fr);
+    top: 28%;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+}
+#order .inventory-details>div:nth-child(5){
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+#order .inventory-details>div:nth-child(6){
+    grid-column: 3/5;
+    grid-row: 2/3;
+}
+#order .inventory-details>div:nth-child(6)>button{
+    left: 70%;
+}
+#order .table-section{
+    width: 60%;
+    max-height: 40%;
+    left: 5%;
+    top: 50%;
+    box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+}
+#order .total-section{
+    width: 25%;
+    height: 36%;
+    right: 5%;
+    top: 50%;
+    box-shadow: 0px 0px 120px -25px rgb(28, 27, 26);
+    background-color: #B3E2FC;
+    grid-template-columns: 1fr;
+}
+#order .btn-section{
+    top: 88%;
+    right: 5%;
+    width: 20%;
+    height: 7%;
+}
+#order .btn-group>button{
+    font-size: 20px;
+}
+#order .btn-section>div{
+    width: 100%;
+    height: 100%;
+}
