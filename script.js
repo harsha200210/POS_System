@@ -1,96 +1,150 @@
-// document.getElementsByTagName("a")[0].style.color = "#000";
+let navBar = $("#nav-bar");
+//var loginForm = document.getElementById("login");
+let dashboardForm = $("#dashboard");
+let customerForm = $("#customer");
+let itemForm = $("#item");
+let orderForm = $("#order");
+let container = $(".container");
+
+navBar.css("display" , "block");
+//loginForm.style.display = "none";
+dashboardForm.css("display" , "block");
+customerForm.css("display" , "none");
+itemForm.css("display" , "none");
+orderForm.css("display" , "none");
+container.css("display" , "none");
+
+// var userName  =  document.getElementsByClassName("form-control")[0];
+// var password  =  document.getElementsByClassName("form-control")[1];
 //
-// let style = "color: red;background-color: yellow;";
+// userName.addEventListener("keypress", function (event) {
+//     password.focus();
+// });
 //
-// document.getElementsByTagName("a")[0].style.cssText = style;
+// password.addEventListener("keypress", function (event) {
+//     if (event.key === "Enter") {
+//         document.getElementById("btnLogin").click();
+//     }
+// });
+//
+// document.getElementById("btnLogin").addEventListener("click", function() {
+//     console.log("Login button clicked");
+//
+//     if (userName.value === "a" && password.value === "1") {
+//         console.log("Valid login");
+//         navBar.style.display = "block";
+//         loginForm.style.setProperty('display', 'none', 'important'); // Hide login form
+//         dashboard.style.display = "block"; // Show dashboard
+//         customerForm.style.display = "none";
+//         itemForm.style.display = "none";
+//         orderForm.style.display = "none";
+//         changeStyle(0);
+//
+//         if (window.matchMedia("(max-width: 575.98px)").matches) {
+//             container.style.display = "inline-block";
+//         }
+//
+//     } else {
+//         alert("Please enter a valid username and password");
+//         userName.value = "";
+//         password.value = "";
+//     }
+// });
 
-var navBar = document.getElementById("nav-bar");
-var loginForm = document.getElementById("login");
-var dashboard = document.getElementById("dashboard");
-var customerForm = document.getElementById("customer");
-var itemForm = document.getElementById("item");
-var orderForm = document.getElementById("order");
-
-navBar.style.display = "none";
-loginForm.style.display = "block";
-dashboard.style.display = "none";
-customerForm.style.display = "none";
-itemForm.style.display = "none";
-orderForm.style.display = "none";
-
-var userName  =  document.getElementsByClassName("form-control")[0];
-var password  =  document.getElementsByClassName("form-control")[1];
-
-// Check if elements are properly selected
-console.log("Login Form:", loginForm);
-console.log("Dashboard:", dashboard);
-
-userName.addEventListener("keypress", function (event) {
-    password.focus();
-});
-
-password.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        document.getElementById("btnLogin").click();
-    }
-});
-
-document.getElementById("btnLogin").addEventListener("click", function() {
-    console.log("Login button clicked");
-
-    if (userName.value === "a" && password.value === "1") {
-        console.log("Valid login");
-        navBar.style.display = "block";
-        loginForm.style.setProperty('display', 'none', 'important'); // Hide login form
-        dashboard.style.display = "block"; // Show dashboard
-        customerForm.style.display = "none";
-        itemForm.style.display = "none";
-        orderForm.style.display = "none";
-        changeStyle(0);
+// phone size menu bar icon display
+setInterval(() => {
+    if (window.matchMedia("(max-width: 575.98px)").matches) {
+        container.css("display" , "inline-block");
     } else {
-        alert("Please enter a valid username and password");
-        userName.value = "";
-        password.value = "";
+        container.css("display" , "none");
+        $(".menu-div").css("display" , "none");
     }
+},100);
+
+// phone size menu display
+function myFunction(x) {
+    x.classList.toggle("change");
+    checkMenuDisplay();
+}
+
+// check menu display
+var menuDiv = $(".menu-div");
+
+function checkMenuDisplay(){
+    if (menuDiv.css("display") === "grid") {
+        menuDiv.css("display" , "none");
+    } else {
+        menuDiv.css("display" , "grid");
+    }
+}
+
+// main section change display
+function changeDisplay(dashboard,customer,item,order){
+    dashboardForm.css("display" , dashboard);
+    customerForm.css("display" , customer);
+    itemForm.css("display" , item);
+    orderForm.css("display" , order);
+}
+
+changeStyle(0);
+
+// menu bar dashboard button click action
+$("#dashboard-btn-menu").on("click", function(){
+    changeDisplay("block", "none", "none", "none");
+    myFunction(container[0]);
 });
 
-document.getElementById("nav-dashboard").addEventListener("click", function() {
-    dashboard.style.display = "block";
-    customerForm.style.display = "none";
-    itemForm.style.display = "none";
-    orderForm.style.display = "none";
+// menu bar customer button click action
+$("#customer-btn-menu").on("click", function() {
+    changeDisplay("none", "block", "none", "none");
+    myFunction(container[0]);
+});
+
+// menu bar item button click action
+$("#item-btn-menu").on("click", function() {
+    changeDisplay("none", "none", "block", "none");
+    myFunction(container[0]);
+});
+
+// menu bar order button click action
+$("#order-btn-menu").on("click", function() {
+    changeDisplay("none", "none", "none", "block");
+    myFunction(container[0]);
+});
+
+// navigation bar dashboard button click action
+$("#nav-dashboard").on("click", function() {
+    changeDisplay("block", "none", "none", "none");
     changeStyle(0)
 });
 
-document.getElementById("nav-customer").addEventListener("click", function() {
-    dashboard.style.display = "none";
-    customerForm.style.display = "block";
-    itemForm.style.display = "none";
-    orderForm.style.display = "none";
+// navigation bar customer button click action
+$("#nav-customer").on("click", function() {
+    changeDisplay("none", "block", "none", "none");
     changeStyle(1)
 });
 
-document.getElementById("nav-item").addEventListener("click", function() {
-    dashboard.style.display = "none";
-    customerForm.style.display = "none";
-    itemForm.style.display = "block";
-    orderForm.style.display = "none";
+// navigation bar item button click action
+$("#nav-item").on("click", function() {
+    changeDisplay("none", "none", "block", "none");
     changeStyle(2)
 });
 
-document.getElementById("nav-order").addEventListener("click", function() {
-    dashboard.style.display = "none";
-    customerForm.style.display = "none";
-    itemForm.style.display = "none";
-    orderForm.style.display = "block";
+// navigation bar order button click action
+$("#nav-order").on("click", function() {
+    changeDisplay("none", "none", "none", "block");
     changeStyle(3)
 });
 
+// navigation bar buttons border style
 function changeStyle(index){
-    var navItems = document.getElementsByClassName("nav-item");
+    let navItems = $(".nav-item");
     for (var i = 0; i < navItems.length; i++) {
-        navItems[i].style.border = "none";
+        $(navItems[i]).css("border", "none");
     }
-    navItems[index].style.borderBottom = "2px solid #0d6efd";
+    $(navItems[index]).css("borderBottom", "2px solid #0d6efd");
 }
+
+
+
 
