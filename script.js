@@ -145,6 +145,102 @@ function changeStyle(index){
     $(navItems[index]).css("borderBottom", "2px solid #0d6efd");
 }
 
+const customers_array = [];
+
+let cusBody = $("#customer-tbl-body");
+let cusId = $("#inputId");
+let cusName = $("#inputName");
+let cusAddress = $("#inputAddress");
+let cusNic = $("#inputNic");
+let cusEmail = $("#inputEmail");
+let cusTel = $("#inputTel");
+
+// save button action
+$("#customer-save").on("click", function() {
+    const customer = {
+        customer_id : cusId.val(),
+        name : cusName.val(),
+        address : cusAddress.val(),
+        nic : cusNic.val(),
+        email : cusEmail.val(),
+        tel : cusTel.val()
+    }
+    customers_array.push(customer);
+    loadCustomerData();
+})
+
+// customer table add data
+let loadCustomerData = () => {
+    cusBody.children().remove();
+
+    customers_array.map((value,index) => {
+        let data = `<tr><td>${value.customer_id}</td><td>${value.name}</td><td>${value.address}</td><td>${value.nic}</td><td>${value.email}</td><td>${value.tel}</td></tr>`;
+        cusBody.append(data);
+    });
+}
 
 
 
+
+const item_array = [];
+
+let itemBody = $("#item-table-body");
+let itemId = $("#inputItemId");
+let itemModel = $("#inputModel");
+let itemPrice = $("#inputPrice");
+let itemQty = $("#inputQuantity");
+
+// save button action
+$("#item-save").on("click", function() {
+    const item = {
+        item_id : itemId.val(),
+        model : itemModel.val(),
+        price : itemPrice.val(),
+        qty : itemQty.val(),
+    }
+    item_array.push(item);
+    loadItemData();
+})
+
+// item table add data
+let loadItemData = () => {
+    itemBody.children().remove();
+
+    item_array.map((value,index) => {
+        let data = `<tr><td>${value.item_id}</td><td>${value.model}</td><td>${value.price}</td><td>${value.qty}</td></tr>`;
+        itemBody.append(data);
+    });
+}
+
+
+let order_arr = [];
+
+let orderId = $("#inputOrderId");
+let customerId = $("#inputCustomerId");
+let customerName = $("#inputCustomerName");
+let date = new Date();
+let inventoryIdDropDown = $("#inputInventoryId");
+let inventoryModel = $("#inputOrderModel");
+let inventoryPrice = $("#inputOrderPrice");
+let onHandQty = $("#inputOnHandQty");
+let orderQty = $("#inputOrderQty");
+let addBtn = $("#addBtn");
+let orderDetailTblBody = $("#orderDetailTblBody");
+
+// add button action
+addBtn.on("click", function() {
+   let data = `<tr><td>${inventoryIdDropDown.val()}</td><td>${inventoryModel.val()}</td><td>${inventoryPrice.val()}</td><td>${orderQty.val()}</td><td>${parseFloat(inventoryPrice.val()) * parseInt(orderQty.val())}</td></tr>`;
+   orderDetailTblBody.append(data);
+});
+
+// Select all dropdown items
+const dropdownItemIds = $('#dropdown-menu').children();
+
+// Loop through each dropdown item and add a click event listener
+dropdownItemIds.each(function() {
+    // 'this' refers to the current element in the iteration
+    $(this).on('click', function() {
+        // Update the button text with the clicked item's text
+        inventoryIdDropDown.text($(this).text());
+    });
+});
