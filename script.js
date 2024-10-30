@@ -1,6 +1,3 @@
-import CustomerModel from "./model/customerModel.js";
-import ItemModel from "./model/itemModel.js";
-
 let navBar = $("#nav-bar");
 //var loginForm = document.getElementById("login");
 let dashboardForm = $("#dashboard");
