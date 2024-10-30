@@ -54,7 +54,7 @@ function setTotal(){
 // add button action
 addBtn.on("click", function() {
     if (QTY.test(orderQty.val())){
-        let data = `<tr><td>${inventoryIdDropDown.text()}</td><td>${inventoryModel.val()}</td><td>${inventoryPrice.val()}</td><td>${orderQty.val()}</td><td>${parseFloat(inventoryPrice.val()) * parseInt(orderQty.val()).toFixed(2)}</td></tr>`;
+        let data = `<tr><td>${inventoryIdDropDown.text()}</td><td>${inventoryModel.val()}</td><td>${inventoryPrice.val()}</td><td>${orderQty.val()}</td><td>${parseFloat(inventoryPrice.val()) * parseInt(orderQty.val()).toFixed(2)}</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button></td></tr>`;
         orderDetailTblBody.append(data);
         setTotal();
         inventoryIdDropDown.text("Inventory ID");
@@ -65,6 +65,12 @@ addBtn.on("click", function() {
     } else {
         setAlert('error','Invalid Order Quantity !!');
     }
+});
+
+// Event delegation for delete button
+orderDetailTblBody.on('click', '.delete-btn', function() {
+    let row = $(this).closest('tr');
+    setAlert('warning','Do you want to remove this order item?',row);
 });
 
 // customer id eka click kla wita button eke text eka set wenw
