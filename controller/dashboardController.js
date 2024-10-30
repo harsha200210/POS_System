@@ -1,6 +1,7 @@
 // set Total values
 import {customers_array, item_array, order_array} from "../db/database.js";
 import {QTY} from "../util/regex.js";
+import {setAlert} from "../util/alert.js";
 
 let dashboardTblBody = $("#dashboard-tbl-body");
 
@@ -60,7 +61,7 @@ $("#searchOrderIdBtn").on("click", function () {
             break;
         }
     } else {
-        alert("Invalid Order ID");
+        setAlert('error','Invalid Order ID !!');
     }
 });
 

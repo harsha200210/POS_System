@@ -4,6 +4,7 @@ import OrderItemModel from "../model/orderItemModel.js";
 import {setTotalValues,loadAllOrders} from "./dashboardController.js";
 import {loadItemData} from "./itemController.js";
 import {PRICE, QTY} from "../util/regex.js";
+import {setAlert} from "../util/alert.js";
 
 let orderId = $("#inputOrderId");
 let customerId = $("#inputCustomerId");
@@ -62,7 +63,7 @@ addBtn.on("click", function() {
         onHandQty.val("");
         orderQty.val("");
     } else {
-        alert("Invalid Quantity");
+        setAlert('error','Invalid Order Quantity !!');
     }
 });
 
@@ -126,19 +127,22 @@ $('#inputCash').on('keydown', function(event) {
         if (PRICE.test($('#inputCash').val())){
             $("#inputBalance").val((parseFloat($('#inputCash').val()) - parseFloat($("#inputSubTotal").val())).toFixed(2));
         } else {
-            alert("Invalid Cash Price");
+            setAlert('error','Invalid Cash Price !!');
         }
     }
 });
 
 // place order button action
 $("#place-order-btn").on("click", function() {
-    saveOrder();
-    setOrderID();
-    clearFrom();
-    setTotalValues();
-    loadAllOrders();
-    loadItemData();
+    if ($("#inputSubTotal").val() !== ""){
+        saveOrder();
+        setOrderID();
+        clearFrom();
+        setTotalValues();
+        loadAllOrders();
+        loadItemData();
+        setAlert('success','Order Placed Successfully!!');
+    }
 });
 
 // set order

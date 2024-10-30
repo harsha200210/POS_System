@@ -1,8 +1,9 @@
 import CustomerModel from "../model/customerModel.js";
 import {customers_array} from "../db/database.js";
 import {setDataDropdowns} from "./orderController.js"
-import {setTotalValues} from "./dashboardController.js";
+import {loadAllOrders, setTotalValues} from "./dashboardController.js";
 import {NAME, NIC, EMAIL, TEL, QTY} from "../util/regex.js";
+import {setAlert} from "../util/alert.js";
 
 const customer = {
     customer_id : 1,
@@ -33,6 +34,7 @@ $("#customer-save").on("click", function() {
         setDataDropdowns();
         setCustomerID();
         setTotalValues();
+        setAlert('success','Customer Saved Successfully!!');
     }
 });
 
@@ -105,6 +107,7 @@ $("#customer-delete").on("click", function() {
     customers_array.map((value,index) => {
         if (value.customer_id === deletedId) {
             customers_array.splice(index, 1);
+            setAlert('success','Customer Delete Successfully!!');
         }
     });
     loadCustomerData();
@@ -124,6 +127,7 @@ $("#customer-update").on("click", function() {
                 customers_array[index].nic = cusNic.val();
                 customers_array[index].email = cusEmail.val();
                 customers_array[index].tel = cusTel.val();
+                setAlert('success','Customer Updated Successfully!!');
             }
         });
 
@@ -151,7 +155,7 @@ $("#search-customer").on("click", function() {
             }
         });
     } else {
-        alert("Invalid Customer ID");
+        setAlert('error','Invalid Customer ID !!');
     }
 });
 
@@ -163,19 +167,19 @@ const validationCustomerInput = () => {
                     if (TEL.test(cusTel.val())) {
                         return true;
                     } else {
-                        alert("Invalid tel");
+                        setAlert('error','Invalid Telephone Number !!');
                     }
                 } else {
-                    alert("Invalid Email");
+                    setAlert('error','Invalid Email !!');
                 }
             } else {
-                alert("Invalid nic");
+                setAlert('error','Invalid NIC !!');
             }
         } else {
-            alert("Invalid address");
+            setAlert('error','Invalid Address !!');
         }
     } else {
-        alert("Invalid Name");
+        setAlert('error','Invalid Name !!');
     }
     return false;
 }

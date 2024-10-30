@@ -3,6 +3,7 @@ import {item_array} from "../db/database.js";
 import {setDataDropdowns} from "./orderController.js";
 import {setTotalValues} from "./dashboardController.js";
 import {PRICE,QTY} from "../util/regex.js";
+import {setAlert} from "../util/alert.js";
 
 let itemBody = $("#item-table-body");
 let itemId = $("#inputItemId");
@@ -20,6 +21,7 @@ $("#item-save").on("click", function() {
         setDataDropdowns();
         setItemID();
         setTotalValues();
+        setAlert('success','Inventory Saved Successfully!!');
     }
 });
 
@@ -76,6 +78,7 @@ $("#item-delete").on("click", function() {
     item_array.map((value,index) => {
         if (value.item_id === deletedId) {
             item_array.splice(index, 1);
+            setAlert('success','Inventory Delete Successfully!!');
         }
     })
     loadItemData();
@@ -93,6 +96,7 @@ $("#item-update").on("click", function() {
                 item_array[index].model = itemModel.val();
                 item_array[index].price = itemPrice.val();
                 item_array[index].qty = itemQty.val();
+                setAlert('success','Inventory Update Successfully!!');
             }
         });
 
@@ -120,7 +124,7 @@ $("#search-item").on("click", function() {
             }
         });
     } else {
-        alert("Invalid Inventory ID");
+        setAlert('error','Invalid Inventory ID !!');
     }
 });
 
@@ -130,13 +134,13 @@ let validationItemInputs = () => {
             if (QTY.test(itemQty.val())) {
                 return true;
             } else {
-                alert("Invalid quantity");
+                setAlert('error','Invalid Quantity !!');
             }
         } else {
-            alert("Invalid price");
+            setAlert('error','Invalid Price !!');
         }
     } else {
-        alert("invalid Model")
+        setAlert('error','Invalid Inventory Model !!');
     }
     return false;
 }
