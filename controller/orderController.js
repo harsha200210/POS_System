@@ -40,7 +40,7 @@ function setTotal(){
     const lastColumnData = [];
     $('#orderDetailTblBody tr').each(function() {
         //lastColumnData.splice(0, lastColumnData.length);
-        const lastCell = $(this).find('td:last');
+        const lastCell = $(this).find('td:nth-child(5)');
         lastColumnData.push(lastCell.text());
     });
 
